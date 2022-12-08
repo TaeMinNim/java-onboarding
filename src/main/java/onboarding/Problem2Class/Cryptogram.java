@@ -15,7 +15,6 @@ public class Cryptogram {
                 analyzeComplete = false;
                 cryptogram = removeDuplicationCurrentIndex(index);
                 length = cryptogram.length() - 1;
-                System.out.println(length);
                 index -= 1;
             }
         }
