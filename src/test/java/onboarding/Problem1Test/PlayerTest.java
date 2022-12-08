@@ -1,4 +1,4 @@
-package onboarding;
+package onboarding.Problem1Test;
 
 import onboarding.Problem1Class.Player;
 import org.junit.jupiter.api.DisplayName;
