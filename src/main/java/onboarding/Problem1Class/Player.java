@@ -3,8 +3,8 @@ package onboarding.Problem1Class;
 import java.util.List;
 
 public class Player {
-    private final static int LEFT = 1;
-    private final static int RIGHT = 2;
+    private final static int LEFT = 0;
+    private final static int RIGHT = 1;
     private final List<Integer> page;
 
     public Player(List<Integer> page){
