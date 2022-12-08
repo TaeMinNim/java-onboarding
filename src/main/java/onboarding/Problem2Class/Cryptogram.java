@@ -2,7 +2,7 @@ package onboarding.Problem2Class;
 
 public class Cryptogram {
     private String cryptogram;
-
+    private boolean analyzeComplete = true;
     public Cryptogram(String cryptogram){
         this.cryptogram = cryptogram;
     }
@@ -12,6 +12,7 @@ public class Cryptogram {
 
         for(int index = 0; index < length; index++){
             if(duplicateNextIndex(index, cryptogram)) {
+                analyzeComplete = false;
                 cryptogram = removeDuplicationCurrentIndex(index);
                 length = cryptogram.length() - 1;
                 System.out.println(length);
@@ -39,5 +40,9 @@ public class Cryptogram {
         char current = cryptogram.charAt(index);
         char next = cryptogram.charAt(index + 1);
         return current == next;
+    }
+
+    public boolean isAnalyzeComplete(){
+        return analyzeComplete;
     }
 }
