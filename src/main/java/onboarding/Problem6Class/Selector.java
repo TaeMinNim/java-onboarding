@@ -1,6 +1,7 @@
 package onboarding.Problem6Class;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Selector {
@@ -22,9 +23,7 @@ public class Selector {
     }
 
     public List<String> getDuplicationEmail(){
-        for(int i = 0; i < crews.size(); i++){
-            findDuplicationCrew(i);
-        }
+        start();
         List<String> email = new ArrayList<>();
         for(int i = 0; i < crews.size(); i++){
             if(duplication.get(i)) {
@@ -32,8 +31,16 @@ public class Selector {
                 email.add(crew.getEmail());
             }
         }
-        System.out.println(duplication);
+        Collections.sort(email);
+
         return email;
+    }
+
+    private void start(){
+        for(int i = 0; i < crews.size(); i++){
+            findDuplicationCrew(i);
+        }
+
     }
 
     private void findDuplicationCrew(int crewIndex){
