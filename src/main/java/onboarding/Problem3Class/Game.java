@@ -2,10 +2,19 @@ package onboarding.Problem3Class;
 
 public class Game {
     private int number;
-    private int count = 0;
-
+    private int count = 1;
     public Game(int number){
         this.number = number;
+    }
+
+    public int start(){
+        int result = 0;
+        while(lessThanNumber()){
+            result += matchCount(count);
+            count++;
+        }
+
+        return result;
     }
 
     private int matchCount(int number){
