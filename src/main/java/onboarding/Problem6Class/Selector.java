@@ -17,6 +17,19 @@ public class Selector {
         }
     }
 
+    public List<String> getDuplicationEmail(){
+        for(List<String> crew: crews){
+            String nickname = crew.get(NICKNAME);
+            checkDuplication(nickname);
+        }
+        List<String> email = new ArrayList<>();
+        for(List<String> crew: crews){
+            email.add(crew.get(EMAIL));
+        }
+
+        return email;
+    }
+
     private void checkDuplication(String nickname){
         for(int i = 0; i < crews.size(); i++){
             if(duplication.get(i)){
