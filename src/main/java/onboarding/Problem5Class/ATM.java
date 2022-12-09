@@ -19,6 +19,8 @@ public class ATM {
         return cash;
     }
     private int count(int unit){
-        return money / unit;
+        int cash = money / unit;
+        money %= unit;
+        return cash;
     }
 }
