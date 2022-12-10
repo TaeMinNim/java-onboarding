@@ -16,13 +16,18 @@ public class Point {
         pointMap.replace(user, updatedPoint);
     }
 
-    public List<String> getRecommendFriend(){
+    public List<String> getRecommendFriend(String user, List<String> userFriends){
         List<Map.Entry<String, Integer>> friends = new ArrayList<>(pointMap.entrySet());
         Collections.sort(friends, new PointComparator());
 
         List<String> recommendFriend = new ArrayList<>();
         for(Map.Entry<String, Integer> friend: friends){
             recommendFriend.add(friend.getKey());
+        }
+        System.out.println(friends);
+        recommendFriend.remove(user);
+        for(String friend: userFriends){
+            recommendFriend.remove(friend);
         }
 
         return recommendFriend;
