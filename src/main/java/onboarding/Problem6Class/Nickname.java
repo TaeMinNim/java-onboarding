@@ -9,7 +9,12 @@ public class Nickname {
     public Nickname(String nickname){
         this.nickname = nickname;
     }
+
     public boolean isDuplication(Nickname other){
+        if(nickname.length() == 1){
+            return nickname.equals(other.nickname);
+        }
+
         List<String> partOfNicknames = divide(nickname);
         for(String partOfNickname: partOfNicknames){
             if(other.nickname.contains(partOfNickname)){
