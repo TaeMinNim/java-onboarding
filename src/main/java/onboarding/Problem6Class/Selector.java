@@ -3,6 +3,7 @@ package onboarding.Problem6Class;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Selector {
     private final static int EMAIL = 0;
@@ -31,6 +32,7 @@ public class Selector {
                 email.add(crew.getEmail());
             }
         }
+        email = email.stream().distinct().collect(Collectors.toList());
         Collections.sort(email);
 
         return email;
