@@ -24,12 +24,19 @@ public class Point {
         for(Map.Entry<String, Integer> friend: friends){
             recommendFriend.add(friend.getKey());
         }
-        System.out.println(friends);
+        removeSelf(user, recommendFriend);
+        removeFriend(userFriends, recommendFriend);
+
+        return recommendFriend;
+    }
+
+    private void removeSelf(String user, List<String> recommendFriend){
         recommendFriend.remove(user);
+    }
+
+    private void removeFriend(List<String> userFriends, List<String> recommendFriend){
         for(String friend: userFriends){
             recommendFriend.remove(friend);
         }
-
-        return recommendFriend;
     }
 }
